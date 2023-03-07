@@ -1,2 +1,2 @@
 # library-odin
-### the odin js project: Library
+### the odin project js project: Library
