@@ -8,6 +8,7 @@
 #book-display-section {
     width: 80%;
     border-collapse: collapse;
+    margin: 1rem;
 }
 
 th, td {

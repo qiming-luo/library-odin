@@ -2,7 +2,7 @@ layout:
         title
         short description
         new book button (link to form)
-        book display table with remove button
+        book display table with remove button / or used cards so it is easy to used flex-box to achieve responsive design
         new book button (link to form)
         form(collect user input about new book. once submit, it will jump to new book info in display section)
 
@@ -16,4 +16,9 @@ style:
     3. center title and new book button
     4. responsive
     5. table border collapse
+    
+chanllenge: 1. when view port > 960px, use table; else use cards. OR
+			2. user can choose display style, either cards or table.
+    
+    
 
