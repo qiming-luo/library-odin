@@ -5,14 +5,13 @@
 
 }
 
-#book-display-section {
-    width: 80%;
+#table-display table {
+    width: 90%;
+    margin: 1rem ;
     border-collapse: collapse;
-    margin: 1rem;
 }
 
-th, td {
-    border-bottom: 1px solid green;
-    text-align: center;
-    line-height: 1.5;
+#table-display th, td {
+    border: 1px solid green;
+    line-height: 2;
 }
