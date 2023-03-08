@@ -4,14 +4,3 @@
     padding: 0;
 
 }
-
-#table-display table {
-    width: 90%;
-    margin: 1rem ;
-    border-collapse: collapse;
-}
-
-#table-display th, td {
-    border: 1px solid green;
-    line-height: 2;
-}
