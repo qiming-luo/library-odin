@@ -32,7 +32,17 @@
                         <td>Harry Potter and the Philosopher's Stone</td>
                         <td>J. K. Rowling</td>
                         <td>300</td>
-                        <td>partly read<span>change status</span></td>
+                        <td>
+                            <p class="initial-read-state">reading</p>
+                            <form action="" method="post" class="toggle-read-state">
+                                <select name="toggle-read-state-option" id="toggle-read-state-option">
+                                    <option value="" disabled selected hidden>change read state</option>
+                                    <option value="not-yet">not yet read</option>
+                                    <option value="reading">reading</option>
+                                    <option value="finished">finished</option>
+                                </select>
+                            </form>
+                        </td>
                         <td>
                             <button type="button" class="remove-book">remove this book</button>
                         </td>

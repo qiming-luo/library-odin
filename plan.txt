@@ -1,10 +1,10 @@
 layout:
         title
         short description
-        new book button (link to form)
+        new book button (pop up form)
         book display table with remove button / or used cards so it is easy to used flex-box to achieve responsive design
         new book button (link to form)
-        form(collect user input about new book. once submit, it will jump to new book info in display section)
+
 
 js funtionality:
     an dynamic array to story all books, each book is an object with title, author, pages, read status.
@@ -12,10 +12,11 @@ js funtionality:
 
 style:
     1. use google font
-    2. Hoverable Table + border bottom 
+    2. Hoverable Table 
     3. center title and new book button
     4. responsive
     5. table border collapse
+    6. pop up form
     
 chanllenge: 1. when view port > 960px, use table; else use cards. OR
 			2. user can choose display style, either cards or table.
