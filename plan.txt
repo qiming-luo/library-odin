@@ -6,9 +6,7 @@ layout:
         new book button (link to form)
 
 
-js funtionality:
-    an dynamic array to story all books, each book is an object with title, author, pages, read status.
-    dom mainipulation
+
 
 style:
     1. use google font
@@ -17,6 +15,7 @@ style:
     4. responsive
     5. table border collapse
     6. pop up form
+    7. toggle read: when click change, innerhtml change, reading -> finished -> not yet -> reading; a circle.
     
 chanllenge: 1. when view port > 960px, use table; else use cards. OR
 			2. user can choose display style, either cards or table.

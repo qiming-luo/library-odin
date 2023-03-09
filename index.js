@@ -9,20 +9,12 @@ function BookConstructor(title, name, pages, readState) {
     this.readState = readState;
 }
 
-/*work flow
-    1. set up html form
-    2. write submit button event handler: get user input to create book tr and handle remove event && toggle
-    read state event
-*/
-// remove book tr from table
-let booksTable = document.getElementById('books-table'); // table element
+// handle add new book btn
+const addNewBookButton = document.querySelector('.add-new-book');
+let newBookFormDiv = document.getElementById('new-book-form-div');
+addNewBookButton.addEventListener('click', () => {
+    newBookFormDiv.style.display = 'block';
+});  // show add new book div when click
 
-// get user input and create book tr, and add event listener
-let bookTr = document.createElement('tr'); // create book tr
-// create book tds and append them to book tr
+// handle user input, and add to table and lib array
 
-
-function handlerRemoveBook() {
-    let bookToRemove = document.getElementById('book-tr-id');
-    booksTable.removeChild(bookToRemove);
-}

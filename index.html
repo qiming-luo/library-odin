@@ -15,7 +15,8 @@
 
     <main>
         <p id="intro">This is a place to track books in my library.</p>
-        <button type="button" class="add-new-book">Add New Book</button>
+
+        <!-- library -->
         <div id="book-display">
             <table id="books-table">
                 <thead>
@@ -28,20 +29,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr id="book1">
                         <td>Harry Potter and the Philosopher's Stone</td>
                         <td>J. K. Rowling</td>
                         <td>300</td>
                         <td>
-                            <p class="initial-read-state">reading</p>
-                            <form action="" method="post" class="toggle-read-state">
-                                <select name="toggle-read-state-option" id="toggle-read-state-option">
-                                    <option value="" disabled selected hidden>change read state</option>
-                                    <option value="not-yet">not yet read</option>
-                                    <option value="reading">reading</option>
-                                    <option value="finished">finished</option>
-                                </select>
-                            </form>
+                            <p class="read-state">reading</p>
+                            <span class="read-state-change-indicator">change</span>
                         </td>
                         <td>
                             <button type="button" class="remove-book">remove this book</button>
@@ -52,25 +46,30 @@
             
             <div id="books-cards"></div>
         </div>
+
+        <!-- add new book button -->
         <button type="button" class="add-new-book">Add New Book</button>
-        <div id="new-book-form">
+
+
+        <!-- new-book-form -->
+        <div id="new-book-form-div">
             <h2>Add new book information</h2>
-            <form action="" method="post">
+            <form action="" method="post" id="new-book-form">
                 <section id="for-title">
-                    <label for="title-info">The title of new book</label>
-                    <input type="text" required name="title-info" id="title-info">
+                    <label for="title-info" class="new-book-label">The title of new book</label>
+                    <input type="text" required name="title-info" id="title-info" class="new-book-input">
                 </section>
                 <section id="for-author">
-                    <label for="author-info">Name of the author</label>
-                    <input type="text" required name="author-info" id="author-info">
+                    <label for="author-info" class="new-book-label">Name of the author</label>
+                    <input type="text" required name="author-info" id="author-info" class="new-book-input">
                 </section>
                 <section id="for-pages">
-                    <label for="pages-info">How many pages the new book has?</label>
-                    <input type="number" required name="pages-info" id="pages-info">
+                    <label for="pages-info" class="new-book-label">How many pages the new book has?</label>
+                    <input type="number" required name="pages-info" id="pages-info" class="new-book-input">
                 </section>
                 <section id="for-read">
-                    <label for="read-state">select reading state</label>
-                    <select name="read-state" id="read-state" required>
+                    <label for="read-state" class="new-book-label">select reading state</label>
+                    <select name="read-state" id="read-state" class="new-book-input" required>
                         <option value="" disabled selected hidden></option>
                         <option value="not-yet-read">not yet read</option>
                         <option value="reading">reading</option>
@@ -78,7 +77,7 @@
                     </select>
                 </section>
                 <section id="submit-form">
-                    <input type="submit" id="submit-btn" name="submit-btn" value="submit">
+                    <input type="submit" id="submit-new-book" name="submit-new-book" value="submit" class="new-book-input">
                 </section>
             </form>
         </div>
