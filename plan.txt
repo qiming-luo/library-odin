@@ -15,7 +15,7 @@ style:
     4. responsive
     5. table border collapse
     6. pop up form
-    7. toggle read: when click change, innerhtml change, reading -> finished -> not yet -> reading; a circle.
+    7. toggle read: user can input own text.
     
 chanllenge: 1. when view port > 960px, use table; else use cards. OR
 			2. user can choose display style, either cards or table.

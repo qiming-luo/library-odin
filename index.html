@@ -57,7 +57,7 @@
             <form action="" method="post" id="new-book-form">
                 <section id="for-title">
                     <label for="title-info" class="new-book-label">The title of new book</label>
-                    <input type="text" required name="title-info" id="title-info" class="new-book-input">
+                    <input type="text" required name="title-info" id="title-info" class="new-book-input" >
                 </section>
                 <section id="for-author">
                     <label for="author-info" class="new-book-label">Name of the author</label>
@@ -67,14 +67,9 @@
                     <label for="pages-info" class="new-book-label">How many pages the new book has?</label>
                     <input type="number" required name="pages-info" id="pages-info" class="new-book-input">
                 </section>
-                <section id="for-read">
-                    <label for="read-state" class="new-book-label">select reading state</label>
-                    <select name="read-state" id="read-state" class="new-book-input" required>
-                        <option value="" disabled selected hidden></option>
-                        <option value="not-yet-read">not yet read</option>
-                        <option value="reading">reading</option>
-                        <option value="finished">finished</option>
-                    </select>
+                <section id="for-rea-state">
+                    <label for="read-state" class="new-book-label">reading state</label>
+                    <input type="text" name="read-state" id="read-state" required>
                 </section>
                 <section id="submit-form">
                     <input type="submit" id="submit-new-book" name="submit-new-book" value="submit" class="new-book-input">
@@ -82,5 +77,7 @@
             </form>
         </div>
     </main>
+
+    
 </body>
 </html>
