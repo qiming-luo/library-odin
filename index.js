@@ -23,15 +23,18 @@ addNewBookButton.addEventListener('click', () => {
     newBookFormDiv.style.display = 'block';
 });  // show add new book div when click
 
-// handle user input, and add to table and lib array
 
 // handle remove button
 function handleRemove(event) {
     let trToRemove = event.target.parentElement.parentElement;  // return tr holding remove btn
-    document.getElementById('lib-body').removeChild(trToRemove); 
+    let titleOfBook = trToRemove.firstChild.innerHTML; // it will be the title of the book to remove
+    let indexToRemove = library.findIndex(obj => {obj.title === titleOfBook}); // find index in the library
+    library.splice(indexToRemove, 1); // remove the book obj
+    document.getElementById('lib-body').removeChild(trToRemove); // remove tr from tbody
+    //console.log(library); // test passed
 }
-/*
-//test remove
+/* test handleRemove 
+console.log(library);
 let removeHarry = document.querySelector('.remove-book');
 removeHarry.addEventListener('click', handleRemove); // passed
 */
