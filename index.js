@@ -25,6 +25,17 @@ addNewBookButton.addEventListener('click', () => {
 
 // handle user input, and add to table and lib array
 
+// handle remove button
+function handleRemove(event) {
+    let trToRemove = event.target.parentElement.parentElement;  // return tr holding remove btn
+    document.getElementById('lib-body').removeChild(trToRemove); 
+}
+/*
+//test remove
+let removeHarry = document.querySelector('.remove-book');
+removeHarry.addEventListener('click', handleRemove); // passed
+*/
+
 // get user input
 let submitBtn = document.getElementById('submit-form');
 function handleSubmit(event) {
