@@ -27,16 +27,35 @@ addNewBookButton.addEventListener('click', () => {
 // handle remove button
 function handleRemove(event) {
     let trToRemove = event.target.parentElement.parentElement;  // return tr holding remove btn
-    let titleOfBook = trToRemove.firstChild.innerHTML; // it will be the title of the book to remove
-    let indexToRemove = library.findIndex(obj => {obj.title === titleOfBook}); // find index in the library
-    library.splice(indexToRemove, 1); // remove the book obj
+    let bookTitle = trToRemove.querySelector('.book-title').innerHTML;
+    //console.log(bookTitle); //for test
+    let indexToRemove = library.findIndex(obj => obj.title === bookTitle); // find index in the library
+    library.splice(indexToRemove, 1); // remove the book from library
     document.getElementById('lib-body').removeChild(trToRemove); // remove tr from tbody
-    //console.log(library); // test passed
+    console.log(library); // test passed
 }
-/* test handleRemove 
-console.log(library);
+/*
+// test handleRemove 
 let removeHarry = document.querySelector('.remove-book');
 removeHarry.addEventListener('click', handleRemove); // passed
+*/
+
+
+// handle change button
+function handleChangeButton(event) {
+    let trHoldingChangeBtn = event.target.parentElement.parentElement;  // return tr holding changing btn
+    let bookTitle = trHoldingChangeBtn.querySelector('.book-title').innerHTML;
+    console.log(bookTitle);
+    let indexToRemove = library.findIndex(obj => obj.title === bookTitle); // find index in the library
+    let userInput = prompt('please enter new state');
+    library[indexToRemove].readState = userInput; // update library 
+    trHoldingChangeBtn.querySelector('.read-state').innerHTML = userInput; //update html content
+    //console.log(library) // for test
+}
+/*
+//test handleChangeButton passed
+let eleChange = document.getElementById('change');
+eleChange.addEventListener('click', handleChangeButton);
 */
 
 // get user input
