@@ -1,0 +1,10 @@
+1. when form appear, other divs should disappear, make it easy to oprate and see on cellphone.
+
+2. each td have a change icon, make it easy to change everything in case user make mistake when inputing
+
+3. form should has a close icon to let user close the form and reset values to '' if user decide no to add 
+new book. 
+    After submit form, values should reset to ''.
+
+4. remove should have a confirm popup incase mistaken.
+
