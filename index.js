@@ -34,11 +34,8 @@ function handleRemove(event) {
     document.getElementById('lib-body').removeChild(trToRemove); // remove tr from tbody
     console.log(library); // test passed
 }
-/*
-// test handleRemove 
-let removeHarry = document.querySelector('.remove-book');
-removeHarry.addEventListener('click', handleRemove); // passed
-*/
+document.getElementById('demo-remove').addEventListener('click', handleRemove); // remove demo-book-tr
+
 
 
 // handle change button
@@ -52,13 +49,9 @@ function handleChangeButton(event) {
     trHoldingChangeBtn.querySelector('.read-state').innerHTML = userInput; //update html content
     //console.log(library) // for test
 }
-/*
-//test handleChangeButton passed
-let eleChange = document.getElementById('change');
-eleChange.addEventListener('click', handleChangeButton);
-*/
+document.getElementById('demo-change').addEventListener('click', handleChangeButton); // change demo-book reading state
 
-// get user input
+// handle submit form and update libraray array && html tr
 let submitBtn = document.getElementById('submit-form');
 function handleSubmit(event) {
     event.preventDefault();
@@ -70,19 +63,57 @@ function handleSubmit(event) {
     // build BookConstructor instance, push it to library
     let book = new BookConstructor(titleValue, authorValue, pagesValue, readStateValue);
     library.push(book);
-    console.log(library);
-/*
-    // create new elements and add to tbody
-    let tr = document.createElement('tr'); //first add tr
+    console.log(library); //pass
 
-    let td1 = document.createElement('td'); // td1 to hold title
-    td1.innerHTML = titleValue; 
-    tr.appendChild(td1);
+    // add html element 
+    let trToAdd = document.createElement('tr'); //create book-tr
+    trToAdd.className = 'book-tr';
+    document.getElementById('lib-body').appendChild(trToAdd);
 
-    let td2 = document.createElement('td'); // td2 to hold author
-    td2.innerHTML = 'authorValue';
-    tr.appendChild(td2);
+    let tdTitle = document.createElement('td');  // title-td
+    tdTitle.className = 'book-title';
+    tdTitle.innerHTML = titleValue;
+    trToAdd.appendChild(tdTitle);  // pass
 
-    */
+    let tdAuthor = document.createElement('td');
+    tdAuthor.className = 'book-author';
+    tdAuthor.innerHTML = authorValue;
+    trToAdd.appendChild(tdAuthor);
+
+    let tdPages = document.createElement('td');  // pages-td
+    tdPages.className = 'book-pages';
+    tdPages.innerHTML = pagesValue;
+    trToAdd.appendChild(tdPages);
+
+    let tdRead = document.createElement('td');  // read-td
+    trToAdd.appendChild(tdRead);
+    let readStateText = document.createElement('p');
+    readStateText.innerHTML = readStateValue;
+    readStateText.className = 'read-state';
+    tdRead.appendChild(readStateText); // append <p> to read-td
+    let readStateChangeButton = document.createElement('button');
+    readStateChangeButton.className = 'read-state-change-indicator';
+    readStateChangeButton.type = 'button';
+    readStateChangeButton.innerHTML = 'change';
+    readStateChangeButton.addEventListener('click', handleChangeButton);
+    tdRead.appendChild(readStateChangeButton); // append change button to read-td
+
+    let tdRemove = document.createElement('td'); // remove-td
+    trToAdd.appendChild(tdRemove);
+    let removeBookButton = document.createElement('button');
+    removeBookButton.type = 'button';
+    removeBookButton.className = 'remove-book';
+    removeBookButton.innerHTML = 'remove this book';
+    removeBookButton.addEventListener('click', handleRemove);
+    tdRemove.appendChild(removeBookButton); 
 }
 submitBtn.addEventListener('click', handleSubmit);
+
+// make form disappear after click submit
+function makeFormInvisable(ele) {
+    ele.style.display = 'none';
+}
+
+submitBtn.addEventListener('click', function(){
+    makeFormInvisable(newBookFormDiv);
+});
